@@ -43,11 +43,14 @@ class LivechatOfficeHour extends RocketChat.models._Base {
 	isNowWithinHours() {
 		// get current time on server in utc
 		// var ct = moment().utc();
+
 		const currentTime = moment.utc(moment().utc().format('dddd:HH:mm'), 'dddd:HH:mm');
 
 		// get todays office hours from db
 		const todaysOfficeHours = this.findOne({day: currentTime.format('dddd')});
+
 		if (!todaysOfficeHours) {
+
 			return false;
 		}
 
@@ -66,6 +69,7 @@ class LivechatOfficeHour extends RocketChat.models._Base {
 		}
 
 		const result = currentTime.isBetween(start, finish);
+
 
 		// inBetween  check
 		return result;

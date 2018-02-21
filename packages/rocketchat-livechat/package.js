@@ -165,6 +165,7 @@ Package.onUse(function(api) {
 	api.addFiles('server/methods/takeInquiry.js', 'server');
 	api.addFiles('server/methods/returnAsInquiry.js', 'server');
 	api.addFiles('server/methods/saveOfficeHours.js', 'server');
+	api.addFiles('server/methods/checkWorkingHours.js', 'server');
 	api.addFiles('server/methods/sendTranscript.js', 'server');
 
 	// models

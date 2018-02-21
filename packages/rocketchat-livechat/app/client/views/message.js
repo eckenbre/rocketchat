@@ -67,7 +67,7 @@ Template.message.helpers({
 		if (agent && this.u.username === agent.username) {
 			// return agent.name || agent.username;
 			//ALEJANDRO Harcodeo HSBC
-			return "HSBC Bank Argentina S.A.";
+			return "HSBC BANK – Centro de atención al cliente";
 		}
 		//return this.u.username;
 		return "HSBC Bank Argentina S.A.";

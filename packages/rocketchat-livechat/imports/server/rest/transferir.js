@@ -1,3 +1,4 @@
+//ALEJANDRO funcion de transferencia de operador
 RocketChat.API.v1.addRoute('livechat/transferir', { authRequired: true }, {
 	post() {
 		if (!RocketChat.authz.hasPermission(this.userId, 'view-livechat-manager')) {
@@ -71,5 +72,26 @@ $and:[{ "roles" : "livechat-agent"}, {"status" : "online" }, {"roles" : {$ne: "b
 		return RocketChat.API.v1.success({
 			availableOperators
 		});
+	}
+});
+
+RocketChat.API.v1.addRoute('livechat/checkWorkingHours', { authRequired: true}, {
+get() {
+
+		var inWorkingHours = false;
+    const checkingData = this.bodyParams;
+
+
+		if (RocketChat.models.LivechatOfficeHour.isNowWithinHours()) {
+			inWorkingHours = true;
+		}
+		else{
+		}
+		return RocketChat.API.v1.success({
+			inWorkingHours
+		});
+
+
+
 	}
 });
