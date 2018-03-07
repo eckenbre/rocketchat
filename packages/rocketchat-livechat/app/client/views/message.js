@@ -70,7 +70,7 @@ Template.message.helpers({
 			return "HSBC BANK – Centro de atención al cliente";
 		}
 		//return this.u.username;
-		return "HSBC Bank Argentina S.A.";
+		return "HSBC BANK – Centro de atención al cliente";
 	}
 });
 
