@@ -11,7 +11,8 @@ Template.message.helpers({
 		return moment(this.ts).format('LT');
 	},
 	date() {
-		return moment(this.ts).format('LL');
+		//ALEJANDRO cambio locale de la fecha
+		return moment(this.ts).locale("es").format('LL');
 	},
 	isTemp() {
 		if (this.temp === true) {
@@ -55,6 +56,9 @@ Template.message.helpers({
 				return this.html;
 		}
 	},
+	clientehbar() {
+		return "Vos";
+	},
 
 	system() {
 		if (['s', 'p', 'f', 'r', 'au', 'ru', 'ul', 'wm', 'uj', 'livechat-close'].includes(this.t)) {
@@ -67,10 +71,10 @@ Template.message.helpers({
 		if (agent && this.u.username === agent.username) {
 			// return agent.name || agent.username;
 			//ALEJANDRO Harcodeo HSBC
-			return "HSBC BANK – Centro de atención al cliente";
+			return "HSBC BANK – Centro de Atención al Cliente";
 		}
 		//return this.u.username;
-		return "HSBC BANK – Centro de atención al cliente";
+		return "HSBC BANK – Centro de Atención al Cliente";
 	}
 });
 
