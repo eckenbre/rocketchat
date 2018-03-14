@@ -17,8 +17,9 @@ Meteor.methods({
 			displayOfflineForm: null,
 			videoCall: null
 		};
-
-		const room = RocketChat.models.Rooms.findOpenByVisitorToken(visitorToken, {
+    //ALEJANDRO volvi atras.
+		//const room = RocketChat.models.Rooms.findOpenByVisitorToken(visitorToken, {
+		const room = RocketChat.models.Rooms.findOpenByVisitorToken(null, {
 			fields: {
 				name: 1,
 				t: 1,
@@ -31,7 +32,9 @@ Meteor.methods({
 		}).fetch();
 
 		if (room && room.length > 0) {
+			//ALEJANDRO volvi atras
 			info.room = room[0];
+			//info.room = null;
 		}
 
 		const initSettings = RocketChat.Livechat.getInitSettings();
